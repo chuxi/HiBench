@@ -27,5 +27,10 @@
       <artifactId>hadoop-common</artifactId>
       <version>${hadoop.mr2.version}</version>
     </dependency>
+    <dependency>
+      <groupId>com.windjammer</groupId>
+      <artifactId>windjammer-listener</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 </project>

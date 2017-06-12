@@ -17,6 +17,7 @@
 
 package com.intel.hibench.sparkbench.sql
 
+import com.windjammer.WindjammerSparkListener
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.sql.hive.HiveContext
 
@@ -35,6 +36,7 @@ object ScalaSparkSQLBench{
     val sql_file = args(1)
     val sparkConf = new SparkConf().setAppName(workload_name)
     val sc = new SparkContext(sparkConf)
+    sc.addSparkListener(new WindjammerSparkListener(sc))
     val hc = new HiveContext(sc)
 
     val _sql = scala.io.Source.fromFile(sql_file).mkString
